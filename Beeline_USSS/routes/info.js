@@ -695,7 +695,6 @@ exports.getInfoLogininfo = function(req, res) {
 		return res.json(400,req.validationErrorsJson());
 	}
 	res.status(200);
-	console.log("logging test");
 	// set response body and send
 	res.json({mesg:"yaya"});
 };
