@@ -696,7 +696,7 @@ exports.getInfoLogininfo = function(req, res) {
 	res.status(200);
 
 	// set response body and send
-	res.json(req);
+	res.json(req.check('token', 'Invalid parameter').notEmpty());
 };
 
 /*
