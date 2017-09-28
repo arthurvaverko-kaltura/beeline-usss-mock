@@ -1,6 +1,6 @@
-exports.validateBeelineToken = function(req,rsp){
+exports.validateBeelineToken = function(req,res){
 	if (!req.cookies.token){
-		rsp.json({error:"no token"});
-		rsp.end();
+		res.json({error:"no token"});
+		res.send(401, 'Sorry, no token... no sigar...');
 	}
 } 
