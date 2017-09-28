@@ -697,7 +697,7 @@ exports.getInfoLogininfo = function(req, res) {
 	res.status(200);
 
 	// set response body and send
-	res.json("YAY");
+	res.json({mesg:"yaya"});
 };
 
 /*
