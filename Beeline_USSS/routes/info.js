@@ -687,7 +687,7 @@ exports.getInfoLoginconsolidation = function(req, res) {
  * login(type: string) - query parameter - Идентификатор абонента (login, alias, ctn)
  */
 exports.getInfoLogininfo = function(req, res) {
-	//req.check('token', 'Invalid parameter').notEmpty();
+	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('hash', 'Invalid query parameter').notEmpty();
 	req.checkQuery('login', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
