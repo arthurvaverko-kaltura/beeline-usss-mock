@@ -687,7 +687,8 @@ exports.getInfoLoginconsolidation = function(req, res) {
  * login(type: string) - query parameter - Идентификатор абонента (login, alias, ctn)
  */
 exports.getInfoLogininfo = function(req, res) {
-	req.check('token', 'Invalid parameter').notEmpty();
+	tokenValidator.validateBeelineToken(req,res);
+	//req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('hash', 'Invalid query parameter').notEmpty();
 	req.checkQuery('login', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
@@ -696,7 +697,7 @@ exports.getInfoLogininfo = function(req, res) {
 	res.status(200);
 
 	// set response body and send
-	res.json(tokenValidator);
+	res.json("YAY");
 };
 
 /*
