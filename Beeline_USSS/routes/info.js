@@ -696,11 +696,12 @@ exports.getInfoLogininfo = function (req, res) {
 	}
 	res.status(200);
 	// set response body and send
+	//https://my.beeline.ru/api/docs/index.html#!/info_1/getLoginInfo
 	var mockLoginInof = {
 		"logins": [
 			{
-				"type": "",
-				"ussLogin": "",
+				"type": "B2B", // ['UNKNOWN' or ' B2B' or ' B2C' or ' FTTB' or ' ADMIN']
+				"ussLogin": "972542560999",
 				"tempPwd": false,
 				"convergence": {
 					"ctn": "",
