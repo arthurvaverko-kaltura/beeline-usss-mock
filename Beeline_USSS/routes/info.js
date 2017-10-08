@@ -11,11 +11,11 @@ var tokenValidator = require("../tokenValidation.js");
  * client(type: string) - query parameter - Наименование системы, использующей API
  * ctn(type: string) - query parameter - Номер CTN
  */
-exports.getInfoAccumulators = function(req, res) {
+exports.getInfoAccumulators = function (req, res) {
 	req.check('X-API-Token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -33,11 +33,11 @@ exports.getInfoAccumulators = function(req, res) {
  * client(type: string) - query parameter - Наименование системы, использующей API
  * ctn(type: string) - query parameter - номер CTN
  */
-exports.getInfoArpu = function(req, res) {
+exports.getInfoArpu = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -55,11 +55,11 @@ exports.getInfoArpu = function(req, res) {
  * client(type: string) - query parameter - Наименование системы, использующей API
  * ctn(type: string) - query parameter - Номер CTN
  */
-exports.getInfoAutopayment = function(req, res) {
+exports.getInfoAutopayment = function (req, res) {
 	req.check('X-API-Token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -78,11 +78,11 @@ exports.getInfoAutopayment = function(req, res) {
  * client(type: string) - query parameter - Наименование системы, использующей API
  * ctn(type: string) - query parameter - Номер CTN
  */
-exports.getInfoAvailablepromisedpayment = function(req, res) {
+exports.getInfoAvailablepromisedpayment = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -100,11 +100,11 @@ exports.getInfoAvailablepromisedpayment = function(req, res) {
  * client(type: string) - query parameter - Наименование системы, использующей API
  * ctn(type: string) - query parameter - Номер CTN
  */
-exports.getInfoBillperiods = function(req, res) {
+exports.getInfoBillperiods = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -123,11 +123,11 @@ exports.getInfoBillperiods = function(req, res) {
  * requestId(type: integer) - query parameter - Номер запроса USS
  * ctn(type: string) - query parameter - Номер абонента (для УЛК)
  */
-exports.getInfoBlacklistCalls = function(req, res) {
+exports.getInfoBlacklistCalls = function (req, res) {
 	req.check('X-API-Token', 'Invalid parameter').notEmpty();
 	req.checkQuery('requestId', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -146,11 +146,11 @@ exports.getInfoBlacklistCalls = function(req, res) {
  * client(type: string) - query parameter - Наименование системы, использующей API
  * ctn(type: string) - query parameter - Номер CTN
  */
-exports.getInfoBlacklistNumbers = function(req, res) {
+exports.getInfoBlacklistNumbers = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -169,11 +169,11 @@ exports.getInfoBlacklistNumbers = function(req, res) {
  * ctn(type: string) - query parameter - Номер CTN
  * balanceType(type: string) - query parameter - Тип баланса, с которого запрашивается сумма для перевода: bonus - перевод бонусов NLP (значение по умолчанию)
  */
-exports.getInfoBonustransfer = function(req, res) {
+exports.getInfoBonustransfer = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -193,11 +193,11 @@ exports.getInfoBonustransfer = function(req, res) {
  * requestId(type: integer) - query parameter - Номер запроса USS
  * ctn(type: string) - query parameter - Номер CTN
  */
-exports.getInfoCallforward = function(req, res) {
+exports.getInfoCallforward = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('requestId', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -215,10 +215,10 @@ exports.getInfoCallforward = function(req, res) {
  * login(type: string) - query parameter - login
  * ban(type: integer) - query parameter - ban
  */
-exports.getInfoCheckchangepaymentmethodready = function(req, res) {
+exports.getInfoCheckchangepaymentmethodready = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -236,11 +236,11 @@ exports.getInfoCheckchangepaymentmethodready = function(req, res) {
  * client(type: string) - query parameter - Наименование системы, использующей API
  * ctn(type: string) - query parameter - ctn
  */
-exports.getInfoCheckinternationalcalls = function(req, res) {
+exports.getInfoCheckinternationalcalls = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -259,13 +259,13 @@ exports.getInfoCheckinternationalcalls = function(req, res) {
  * houseId(type: integer) - query parameter - Идентификатор дома
  * flat(type: integer) - query parameter - Номер квартиры
  */
-exports.getInfoCheckinternetconnectionavailability = function(req, res) {
+exports.getInfoCheckinternetconnectionavailability = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('hash', 'Invalid query parameter').notEmpty();
 	req.checkQuery('houseId', 'Invalid query parameter').notEmpty();
 	req.checkQuery('flat', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -287,7 +287,7 @@ exports.getInfoCheckinternetconnectionavailability = function(req, res) {
  * middleName(type: string) - query parameter - Отчество владельца CTN.
  * lastName(type: string) - query parameter - Фамилия владельца CTN.
  */
-exports.getInfoCheckpersonaldata = function(req, res) {
+exports.getInfoCheckpersonaldata = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	req.checkQuery('serialNumber', 'Invalid query parameter').notEmpty();
@@ -296,7 +296,7 @@ exports.getInfoCheckpersonaldata = function(req, res) {
 	req.checkQuery('middleName', 'Invalid query parameter').notEmpty();
 	req.checkQuery('lastName', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -316,12 +316,12 @@ exports.getInfoCheckpersonaldata = function(req, res) {
  * ctn(type: string) - query parameter - Номер CTN
  * soc(type: string) - query parameter - Услуга, конфликтующие с которой нужно найти
  */
-exports.getInfoConflict = function(req, res) {
+exports.getInfoConflict = function (req, res) {
 	req.check('X-API-Token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	req.checkQuery('soc', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -344,12 +344,12 @@ exports.getInfoConflict = function(req, res) {
  * start_date(type: DateWrapper) - query parameter - Дата начала периода
  * end_date(type: DateWrapper) - query parameter - Дата окончания периода
  */
-exports.getInfoConnhistory = function(req, res) {
+exports.getInfoConnhistory = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('login', 'Invalid query parameter').notEmpty();
 	req.checkQuery('start_date', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -366,10 +366,10 @@ exports.getInfoConnhistory = function(req, res) {
  * hash(type: string) - query parameter - Hash для проверки token. Конкатенация параметров для формирования hash делается без разделителя. Параметры, участвующие в конкатенации в указанном порядке, следующие: login
  * login(type: string) - query parameter - Логин FTTB-пользователя USSS
  */
-exports.getInfoConvergentactivatonstatus = function(req, res) {
+exports.getInfoConvergentactivatonstatus = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -391,10 +391,10 @@ exports.getInfoConvergentactivatonstatus = function(req, res) {
  * requestId(type: integer) - query parameter - Id существующей заявки на конвергенцию в USSS
  * tokenSms(type: string) - query parameter - Уникальный идентификатор для поиска заявки на конвергенцию, созданной из неавторизованной зоны
  */
-exports.getInfoConvergentrequestparams = function(req, res) {
+exports.getInfoConvergentrequestparams = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -414,11 +414,11 @@ exports.getInfoConvergentrequestparams = function(req, res) {
  * login(type: string) - query parameter - Логин пользователя USSS
  * ctn(type: string) - query parameter - Номер CTN
  */
-exports.getInfoCreditlimit = function(req, res) {
+exports.getInfoCreditlimit = function (req, res) {
 	req.check('X-API-Token', 'Invalid parameter').notEmpty();
 	req.checkQuery('login', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -436,11 +436,11 @@ exports.getInfoCreditlimit = function(req, res) {
  * client(type: string) - query parameter - Наименование системы, использующей API
  * ctn(type: string) - query parameter - Номер CTN
  */
-exports.getInfoCurrentpromisedpayment = function(req, res) {
+exports.getInfoCurrentpromisedpayment = function (req, res) {
 	req.check('X-API-Token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -459,12 +459,12 @@ exports.getInfoCurrentpromisedpayment = function(req, res) {
  * ctn(type: string) - query parameter - Номер CTN
  * pendingCharges(type: com.amdocs.uss.api.ubd.PendingChargesType) - query parameter - Тип запроса задолженности:<br>all (по всем задолженностям)<br>sf_only (только по АП)
  */
-exports.getInfoDebtlist = function(req, res) {
+exports.getInfoDebtlist = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	req.checkQuery('pendingCharges', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -481,10 +481,10 @@ exports.getInfoDebtlist = function(req, res) {
  * hash(type: string) - query parameter - Hash для проверки token. Конкатенация параметров для формирования hash делается без разделителя. Параметры, участвующие в конкатенации в указанном порядке, следующие:
  * client(type: string) - query parameter - Наименование системы, использующей API
  */
-exports.postInfoDecodeanalyticid = function(req, res) {
+exports.postInfoDecodeanalyticid = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -502,10 +502,10 @@ exports.postInfoDecodeanalyticid = function(req, res) {
  * login(type: string) - query parameter - login
  * ctn(type: string) - query parameter - ctn
  */
-exports.getInfoDeposits = function(req, res) {
+exports.getInfoDeposits = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -523,11 +523,11 @@ exports.getInfoDeposits = function(req, res) {
  * client(type: string) - query parameter - Наименование системы, использующей API
  * ctn(type: string) - query parameter - Номер CTN
  */
-exports.getInfoDtm = function(req, res) {
+exports.getInfoDtm = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -547,12 +547,12 @@ exports.getInfoDtm = function(req, res) {
  * login(type: string) - query parameter - Логин пользователя USSS
  * type(type: string) - query parameter - MOBILE/FTTB - тип пользователя
  */
-exports.getInfoGenanalyticid = function(req, res) {
+exports.getInfoGenanalyticid = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	req.checkQuery('type', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -570,11 +570,11 @@ exports.getInfoGenanalyticid = function(req, res) {
  * client(type: string) - query parameter - Наименование системы, использующей API
  * ctn(type: string) - query parameter - Номер CTN
  */
-exports.getInfoGeo = function(req, res) {
+exports.getInfoGeo = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -595,11 +595,11 @@ exports.getInfoGeo = function(req, res) {
  * accountType(type: string) - query parameter - Account Type договора абонента
  * market(type: string) - query parameter - Маркет-код
  */
-exports.getInfoGetavailableservices = function(req, res) {
+exports.getInfoGetavailableservices = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('market', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -619,12 +619,12 @@ exports.getInfoGetavailableservices = function(req, res) {
  * soc(type: string) - query parameter - soc
  * ban(type: integer) - query parameter - ban
  */
-exports.getInfoGetchangepaymentsdata = function(req, res) {
+exports.getInfoGetchangepaymentsdata = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	req.checkQuery('soc', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -644,10 +644,10 @@ exports.getInfoGetchangepaymentsdata = function(req, res) {
  * periodStart(type: DateWrapper) - query parameter - Дата начала периода (формат: yyyy-MM-dd)
  * periodEnd(type: DateWrapper) - query parameter - Дата окончания периода (формат: yyyy-MM-dd)
  */
-exports.getInfoInvoicesinfo = function(req, res) {
+exports.getInfoInvoicesinfo = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -665,10 +665,10 @@ exports.getInfoInvoicesinfo = function(req, res) {
  * client(type: string) - query parameter - Наименование системы, использующей API
  * login(type: string) - query parameter - Логин пользователя USSS
  */
-exports.getInfoLoginconsolidation = function(req, res) {
+exports.getInfoLoginconsolidation = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -686,17 +686,40 @@ exports.getInfoLoginconsolidation = function(req, res) {
  * client(type: string) - query parameter - Наименование системы, использующей API
  * login(type: string) - query parameter - Идентификатор абонента (login, alias, ctn)
  */
-exports.getInfoLogininfo = function(req, res) {
-	tokenValidator.validateBeelineToken(req,res);
+exports.getInfoLogininfo = function (req, res) {
+	tokenValidator.validateBeelineToken(req, res);
 	//req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('hash', 'Invalid query parameter').notEmpty();
 	req.checkQuery('login', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 	// set response body and send
-	res.json({mesg:"yaya"});
+	var mockLoginInof = {
+		"logins": [
+			{
+				"type": "",
+				"ussLogin": "",
+				"tempPwd": false,
+				"convergence": {
+					"ctn": "",
+					"login": "",
+					"fttbLogin": "",
+					"fttbAlias": "",
+					"fttbCtn": "",
+					"date": ""
+				}
+			}
+		],
+		"meta": {
+			"status": "ResultStatus",
+			"code": 0,
+			"message": ""
+		}
+	};
+
+	res.json(mockLoginInof);
 };
 
 /*
@@ -709,11 +732,11 @@ exports.getInfoLogininfo = function(req, res) {
  * client(type: string) - query parameter - Наименование системы, использующей API
  * ctn(type: string) - query parameter - Номер CTN
  */
-exports.getInfoMcbalance = function(req, res) {
+exports.getInfoMcbalance = function (req, res) {
 	req.check('X-API-Token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -730,11 +753,11 @@ exports.getInfoMcbalance = function(req, res) {
  * hash(type: string) - query parameter - Hash для проверки token. Конкатенация параметров для формирования hash делается без разделителя. Параметры, участвующие в конкатенации в указанном порядке, следующие: ctn
  * ctn(type: string) - query parameter - CTN
  */
-exports.getInfoNetworktechnology = function(req, res) {
+exports.getInfoNetworktechnology = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -753,11 +776,11 @@ exports.getInfoNetworktechnology = function(req, res) {
  * client(type: string) - query parameter - Наименование системы, использующей API
  * ctn(type: string) - query parameter - Номер CTN
  */
-exports.getInfoNlpinfo = function(req, res) {
+exports.getInfoNlpinfo = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -777,10 +800,10 @@ exports.getInfoNlpinfo = function(req, res) {
  * ctn(type: string) - query parameter - Номер CTN
  * ban(type: integer) - query parameter - Номер договора
  */
-exports.getInfoNrtbcbalance = function(req, res) {
+exports.getInfoNrtbcbalance = function (req, res) {
 	req.check('X-API-Token', 'Invalid parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -802,13 +825,13 @@ exports.getInfoNrtbcbalance = function(req, res) {
  * periodEnd(type: DateWrapper) - query parameter - Дата окончания периода
  * sessionGroupFlag(type: boolean) - query parameter - Признак объединения интернет-сессий
  */
-exports.getInfoOnlinebilldetail = function(req, res) {
+exports.getInfoOnlinebilldetail = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	req.checkQuery('periodStart', 'Invalid query parameter').notEmpty();
 	req.checkQuery('periodEnd', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -827,10 +850,10 @@ exports.getInfoOnlinebilldetail = function(req, res) {
  * ctn(type: string) - query parameter - Номер CTN
  * login(type: string) - query parameter - Логин пользователя USSS
  */
-exports.getInfoPaytype = function(req, res) {
+exports.getInfoPaytype = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -853,10 +876,10 @@ exports.getInfoPaytype = function(req, res) {
  * periodEnd(type: DateWrapper) - query parameter - Дата окончания периода
  * login(type: string) - query parameter - Логин пользователя USSS
  */
-exports.getInfoPaymentsHistory = function(req, res) {
+exports.getInfoPaymentsHistory = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -876,11 +899,11 @@ exports.getInfoPaymentsHistory = function(req, res) {
  * periodStart(type: DateWrapper) - query parameter - Дата начала периода
  * periodEnd(type: DateWrapper) - query parameter - Дата окончания периода
  */
-exports.getInfoPaymentsHistoryfile = function(req, res) {
+exports.getInfoPaymentsHistoryfile = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -898,11 +921,11 @@ exports.getInfoPaymentsHistoryfile = function(req, res) {
  * client(type: string) - query parameter - Наименование системы, использующей API
  * ctn(type: string) - query parameter - Номер CTN
  */
-exports.getInfoPcl = function(req, res) {
+exports.getInfoPcl = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -921,11 +944,11 @@ exports.getInfoPcl = function(req, res) {
  * Client-Type(type: string) - header parameter - Наименование системы, использующей API
  * ctn(type: string) - query parameter - Номер CTN
  */
-exports.getInfoPinpuk = function(req, res) {
+exports.getInfoPinpuk = function (req, res) {
 	req.check('X-API-Token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -944,11 +967,11 @@ exports.getInfoPinpuk = function(req, res) {
  * client(type: string) - query parameter - Наименование системы, использующей API
  * ctn(type: string) - query parameter - Номер CTN
  */
-exports.getInfoPortation = function(req, res) {
+exports.getInfoPortation = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -968,10 +991,10 @@ exports.getInfoPortation = function(req, res) {
  * ctn(type: string) - query parameter - Номер CTN
  * ban(type: integer) - query parameter - Номер договора
  */
-exports.getInfoPostpaidbalance = function(req, res) {
+exports.getInfoPostpaidbalance = function (req, res) {
 	req.check('X-API-Token', 'Invalid parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -990,10 +1013,10 @@ exports.getInfoPostpaidbalance = function(req, res) {
  * ctn(type: string) - query parameter - Номер CTN
  * ban(type: integer) - query parameter - Номер договора
  */
-exports.getInfoPostpaiddebt = function(req, res) {
+exports.getInfoPostpaiddebt = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -1017,11 +1040,11 @@ exports.getInfoPostpaiddebt = function(req, res) {
  * invoiceDate(type: DateWrapper) - query parameter - Дата выставления счета
  * sessionGroupFlag(type: boolean) - query parameter - Признак объединения интернет-сессий:<br>true - объединять интернет-сессии (значение по умолчанию);<br>false - не объединять интернет-сессии
  */
-exports.getInfoPostpaidinvoicedetails = function(req, res) {
+exports.getInfoPostpaidinvoicedetails = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('login', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -1040,11 +1063,11 @@ exports.getInfoPostpaidinvoicedetails = function(req, res) {
  * client(type: string) - query parameter - Наименование системы, использующей API
  * ctn(type: string) - query parameter - Номер CTN
  */
-exports.getInfoPrepaidaddbalance = function(req, res) {
+exports.getInfoPrepaidaddbalance = function (req, res) {
 	req.check('X-API-Token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -1064,11 +1087,11 @@ exports.getInfoPrepaidaddbalance = function(req, res) {
  * ctn(type: string) - query parameter - Номер CTN
  * startBalance(type: boolean) - query parameter - Признак того, что система должна вернуть параметры стартового баланса абонента
  */
-exports.getInfoPrepaidbalance = function(req, res) {
+exports.getInfoPrepaidbalance = function (req, res) {
 	req.check('X-API-Token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -1089,11 +1112,11 @@ exports.getInfoPrepaidbalance = function(req, res) {
  * client(type: string) - query parameter - Наименование системы, использующей API
  * ctn(type: string) - query parameter - Номер CTN
  */
-exports.getInfoPriceplan = function(req, res) {
+exports.getInfoPriceplan = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -1120,11 +1143,11 @@ exports.getInfoPriceplan = function(req, res) {
  * commission(type: boolean) - query parameter - Признак того, что система должна вернуть комиссию. Значение по умолчанию - false.
  * employeeNumber(type: string) - query parameter - Табельный номер в системе ГЕСП
  */
-exports.getInfoPriceplanavailablelist = function(req, res) {
+exports.getInfoPriceplanavailablelist = function (req, res) {
 	req.check('X-API-Token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -1151,12 +1174,12 @@ exports.getInfoPriceplanavailablelist = function(req, res) {
  * Validation-Settings(type: string) - header parameter - Настройки валидации
  * discountName(type: string) - query parameter - SOC скидки на АП тарифа
  */
-exports.getInfoPriceplanchangingavailability = function(req, res) {
+exports.getInfoPriceplanchangingavailability = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	req.checkQuery('pricePlan', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -1175,11 +1198,11 @@ exports.getInfoPriceplanchangingavailability = function(req, res) {
  * client(type: string) - query parameter - Наименование системы, использующей API
  * ctn(type: string) - query parameter - Номер CTN
  */
-exports.getInfoRests = function(req, res) {
+exports.getInfoRests = function (req, res) {
 	req.check('X-API-Token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -1196,12 +1219,12 @@ exports.getInfoRests = function(req, res) {
  * hash(type: string) - query parameter - Hash для проверки token. Конкатенация параметров для формирования hash делается без разделителя. Параметры, участвующие в конкатенации в указанном порядке, следующие: login
  * login(type: string) - query parameter - Идентификатор абонента (login, alias, ctn)
  */
-exports.getInfoRoleandsecurityelements = function(req, res) {
+exports.getInfoRoleandsecurityelements = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('hash', 'Invalid query parameter').notEmpty();
 	req.checkQuery('login', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -1219,10 +1242,10 @@ exports.getInfoRoleandsecurityelements = function(req, res) {
  * client(type: string) - query parameter - Наименование системы, использующей API
  * role(type: string) - query parameter - Роль администратора, если не заполнено, то возвращаем все FTTB роли
  */
-exports.getInfoRolesinfo = function(req, res) {
+exports.getInfoRolesinfo = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -1241,12 +1264,12 @@ exports.getInfoRolesinfo = function(req, res) {
  * ctnMain(type: string) - query parameter - Номер абонента, отправившего приглашение (главный номер)
  * ctnExtra(type: string) - query parameter - Номер абонента, принимающего приглашение (дополнительный номер)
  */
-exports.getInfoSebinvitation = function(req, res) {
+exports.getInfoSebinvitation = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctnMain', 'Invalid query parameter').notEmpty();
 	req.checkQuery('ctnExtra', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -1267,13 +1290,13 @@ exports.getInfoSebinvitation = function(req, res) {
  * invoiceNumber(type: string) - query parameter - Номер счета
  * email(type: string) - query parameter - Email
  */
-exports.getInfoSendinvoicetoemail = function(req, res) {
+exports.getInfoSendinvoicetoemail = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('login', 'Invalid query parameter').notEmpty();
 	req.checkQuery('invoiceNumber', 'Invalid query parameter').notEmpty();
 	req.checkQuery('email', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -1300,11 +1323,11 @@ exports.getInfoSendinvoicetoemail = function(req, res) {
  * commission(type: boolean) - query parameter - Признак того, что система должна вернуть комиссию. Значение по умолчанию - false.
  * employeeNumber(type: string) - query parameter - Табельный номер в системе ГЕСП
  */
-exports.getInfoServiceavailablelist = function(req, res) {
+exports.getInfoServiceavailablelist = function (req, res) {
 	req.check('X-API-Token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -1326,11 +1349,11 @@ exports.getInfoServiceavailablelist = function(req, res) {
  * ctn(type: string) - query parameter - Номер CTN
  * hiddenService(type: boolean) - query parameter - Индикатор отображения данных по скрытым услугам. Значение по умолчанию - false, скрытые услуги не возвращаются
  */
-exports.getInfoServicelist = function(req, res) {
+exports.getInfoServicelist = function (req, res) {
 	req.check('X-API-Token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -1349,11 +1372,11 @@ exports.getInfoServicelist = function(req, res) {
  * client(type: string) - query parameter - Наименование системы, использующей API
  * serviceName(type: string) - query parameter - Код услуги
  */
-exports.getInfoServiceparams = function(req, res) {
+exports.getInfoServiceparams = function (req, res) {
 	req.check('X-API-Token', 'Invalid parameter').notEmpty();
 	req.checkQuery('serviceName', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -1371,12 +1394,12 @@ exports.getInfoServiceparams = function(req, res) {
  * ctn(type: string) - query parameter - Номер CTN
  * serviceName(type: string) - query parameter - Код услуги
  */
-exports.getInfoServiceparamsvalues = function(req, res) {
+exports.getInfoServiceparamsvalues = function (req, res) {
 	req.check('X-API-Token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	req.checkQuery('serviceName', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -1397,12 +1420,12 @@ exports.getInfoServiceparamsvalues = function(req, res) {
  * notificationIds(type: string) - query parameter - Cписок идентификаторов через запятую
  * status(type: string) - query parameter - Статус уведомления (только статусы типа ‘DELETE’-удаленное, ‘READ’-прочитанное и ‘UNREAD'-непрочитанное)
  */
-exports.postInfoSetnotificationstatus = function(req, res) {
+exports.postInfoSetnotificationstatus = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('notificationIds', 'Invalid query parameter').notEmpty();
 	req.checkQuery('status', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -1424,10 +1447,10 @@ exports.postInfoSetnotificationstatus = function(req, res) {
  * ban(type: integer) - query parameter - Номер договора
  * extendedStatus(type: boolean) - query parameter - Флаг необходимости получения статуса мнп, комверса, консолидированного статуса и т.д.
  */
-exports.getInfoStatus = function(req, res) {
+exports.getInfoStatus = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -1446,11 +1469,11 @@ exports.getInfoStatus = function(req, res) {
  * client(type: string) - query parameter - Наименование системы, использующей API
  * ctn(type: string) - query parameter - Номер CTN
  */
-exports.getInfoSubscriptions = function(req, res) {
+exports.getInfoSubscriptions = function (req, res) {
 	req.check('X-API-Token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -1471,12 +1494,12 @@ exports.getInfoSubscriptions = function(req, res) {
  * reasonKey(type: string) - query parameter - Причина обращения. Используется для канала служебного приложения монобренда
  * employeeNumber(type: string) - query parameter - Табельный номер в системе ГЕСП
  */
-exports.getInfoTargetedoffers = function(req, res) {
+exports.getInfoTargetedoffers = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	req.checkQuery('channelType', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -1502,11 +1525,11 @@ exports.getInfoTargetedoffers = function(req, res) {
  * socType(type: integer) - query parameter - Тип услуги, предложенной абоненту в рамках кампании. Возможные значения:<br>1 - Услуга<br>2 - Тариф<br>3 - Акция<br>4 – Оборудование<br>5 – Предложение FTTB для Mobile<br>6 – Новость FTTB<br>-1 – все перечисленные, кроме 6-новость FTTB<br>-2 – все перечисленные, включая 6-новость, <br>Значение по умолчанию -1
  * login(type: string) - query parameter - Логин пользователя USSS/SSO
  */
-exports.getInfoTargetedoffershistory = function(req, res) {
+exports.getInfoTargetedoffershistory = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -1527,12 +1550,12 @@ exports.getInfoTargetedoffershistory = function(req, res) {
  * type(type: string) - query parameter - Тип заявки. HD_MOVE – заявка на переезд (доступен только для location = HD), CRM_EQCHK – кейс на проверку оборудования в офисе (доступен только для location = CRM), HD_MOB_PKG – заявки на подключение мобильного комплекта(доступен только для location = HD), HD_IPTV – заявки на активацию IPTV (доступен только для location = HD), HD_REISSUE - заявки на переоформление договора ШПД через ЛК(доступен только для location = HD)HD_INSTALLMENT - заявки на покупка WIFI-роутера в рассрочку (доступен только для location = HD)
  * dateFrom(type: DateWrapper) - query parameter - Дата, начиная с которой будет осуществляться выбор заявок для отображения (формат yyyy-MM-ddTHH:mm:ss)
  */
-exports.getInfoTickets = function(req, res) {
+exports.getInfoTickets = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('location', 'Invalid query parameter').notEmpty();
 	req.checkQuery('dateFrom', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -1552,11 +1575,11 @@ exports.getInfoTickets = function(req, res) {
  * ctn(type: string) - query parameter - Номер CTN
  * sessionGroupFlag(type: boolean) - query parameter - Признак объединения интернет-сессий
  */
-exports.getInfoUnbilledcalls = function(req, res) {
+exports.getInfoUnbilledcalls = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -1575,11 +1598,11 @@ exports.getInfoUnbilledcalls = function(req, res) {
  * Client-Type(type: string) - header parameter - Наименование системы, использующей API
  * ctn(type: string) - query parameter - Номер CTN
  */
-exports.getInfoUnbilledcharges = function(req, res) {
+exports.getInfoUnbilledcharges = function (req, res) {
 	req.check('X-API-Token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -1598,11 +1621,11 @@ exports.getInfoUnbilledcharges = function(req, res) {
  * client(type: string) - query parameter - Наименование системы, использующей API
  * ban(type: integer) - query parameter - Номер договора
  */
-exports.getInfoUnpaidinvoice = function(req, res) {
+exports.getInfoUnpaidinvoice = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ban', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -1624,13 +1647,13 @@ exports.getInfoUnpaidinvoice = function(req, res) {
  * channelType(type: integer) - query parameter - Канал предложения.
  * employeeNumber(type: string) - query parameter - Табельный номер в системе ГЕСП
  */
-exports.getInfoUpsellpriceplan = function(req, res) {
+exports.getInfoUpsellpriceplan = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	req.checkQuery('pricePlan', 'Invalid query parameter').notEmpty();
 	req.checkQuery('channelType', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -1653,10 +1676,10 @@ exports.getInfoUpsellpriceplan = function(req, res) {
  * typeNotification(type: string) - query parameter - UPDATE_INFO - псевдоуведомления, NOTIF_INFO - уведомления
  * groupNotification(type: string) - query parameter - Группы оповещений: equip - Заказ оборудования (только для псевдоуведомлений), askHd - Вопросы в Службу поддержки и ограничение сервиса,(только для псевдоуведомлений), changeServ - Изменение сервиса (только для псевдоуведомлений), payFinance- Оплата и финансы, limitNews - Ограничения сервиса и плановые работы (только для уведомлений), ssoNotifications - уведомления о действиях с sso-привязками, ssoInvitations - приглашения к присоединению по sso, allGroups - все группы
  */
-exports.getInfoUsernotifications = function(req, res) {
+exports.getInfoUsernotifications = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -1674,10 +1697,10 @@ exports.getInfoUsernotifications = function(req, res) {
  * cient(type: string) - query parameter - Наименование системы, использующей API
  * login(type: string) - query parameter - Логин пользователя USSS
  */
-exports.getInfoUsertype = function(req, res) {
+exports.getInfoUsertype = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
