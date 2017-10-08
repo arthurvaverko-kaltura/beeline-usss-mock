@@ -701,7 +701,7 @@ exports.getInfoLogininfo = function (req, res) {
 		"logins": [
 			{
 				"type": "B2B", // ['UNKNOWN' or ' B2B' or ' B2C' or ' FTTB' or ' ADMIN']
-				"ussLogin": "972542560999",
+				"ussLogin": "USSSMockLoginName",
 				"tempPwd": false,
 				"convergence": {
 					"ctn": "",
