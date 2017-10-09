@@ -10,11 +10,11 @@
  * login(type: string) - query parameter - Логин пользователя USSS
  * password(type: string) - query parameter - Пароль пользователя USSS Для пользователя Mobile: 6-15 символов - цифры, буквы латиницы и @#$%^&+=)Для пользователя FTTB:  цифры, буквы латиницы (без спецсимволов)
  */
-exports.getAuthAuth = function(req, res) {
+exports.getAuthAuth = function (req, res) {
 	req.checkQuery('login', 'Invalid query parameter').notEmpty();
 	req.checkQuery('password', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -32,10 +32,10 @@ exports.getAuthAuth = function(req, res) {
  * login(type: string) - query parameter - Логин пользователя USSS
  * userType(type: string) - query parameter - Тип пользователя
  */
-exports.putAuthAuth = function(req, res) {
+exports.putAuthAuth = function (req, res) {
 	req.checkQuery('login', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -55,13 +55,13 @@ exports.putAuthAuth = function(req, res) {
  * socialId(type: string) - query parameter - Идентификатор учетной записи в социальной сети
  * socialName(type: string) - query parameter - Тип социальной сети (VK, FB)
  */
-exports.getAuthAuthbysocialid = function(req, res) {
+exports.getAuthAuthbysocialid = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('hash', 'Invalid query parameter').notEmpty();
 	req.checkQuery('socialId', 'Invalid query parameter').notEmpty();
 	req.checkQuery('socialName', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -78,10 +78,10 @@ exports.getAuthAuthbysocialid = function(req, res) {
  * token(type: string) - cookie parameter - Token
  * OAMAuthnCookie(type: string) - cookie parameter - sso  cookie (single sign on)
  */
-exports.getAuthAuthbyssocookie = function(req, res) {
+exports.getAuthAuthbyssocookie = function (req, res) {
 	req.check('OAMAuthnCookie', 'Invalid parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -98,12 +98,12 @@ exports.getAuthAuthbyssocookie = function(req, res) {
  * hash(type: string) - query parameter - Hash для проверки token. Конкатенация параметров для формирования hash делается без разделителя. Параметры, участвующие в конкатенации в указанном порядке, следующие: ctn
  * ctn(type: string) - query parameter - Номер CTN
  */
-exports.getAuthAuthbysystoken = function(req, res) {
+exports.getAuthAuthbysystoken = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('hash', 'Invalid query parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -123,10 +123,10 @@ exports.getAuthAuthbysystoken = function(req, res) {
  * ctn(type: string) - query parameter - Номер CTN
  * email(type: string) - query parameter - E-mail абонента
  */
-exports.putAuthCreateselfreg = function(req, res) {
+exports.putAuthCreateselfreg = function (req, res) {
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -143,12 +143,12 @@ exports.putAuthCreateselfreg = function(req, res) {
  * hash(type: string) - query parameter - Hash для проверки token. Конкатенация параметров для формирования hash делается без разделителя. Параметры, участвующие в конкатенации в указанном порядке, следующие: ctn
  * ctn(type: string) - query parameter - Номер CTN
  */
-exports.postAuthExternalmanagementconfirmationrequest = function(req, res) {
+exports.postAuthExternalmanagementconfirmationrequest = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('hash', 'Invalid query parameter').notEmpty();
 	req.checkQuery('ctn', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -167,10 +167,10 @@ exports.postAuthExternalmanagementconfirmationrequest = function(req, res) {
  * client(type: string) - query parameter - Наименование системы, использующей API
  * login(type: string) - query parameter - Логин пользователя USS/SSO
  */
-exports.getAuthGenerateonetimetoken = function(req, res) {
+exports.getAuthGenerateonetimetoken = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -191,15 +191,27 @@ exports.getAuthGenerateonetimetoken = function(req, res) {
  * userType(type: string) - query parameter - Тип пользователя
  * targetType(type: string) - query parameter - Тип витрины, на которую нужно формировать ссылку в email
  */
-exports.getAuthPassreset = function(req, res) {
+exports.getAuthPassreset = function (req, res) {
 	req.checkQuery('login', 'Invalid query parameter').notEmpty();
+	req.checkQuery('channelType', 'Invalid query parameter').notEmpty();
+	req.checkQuery('userType', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
 	// set response body and send
-	res.json({});
+	var resData = {
+		"channel": "SMS",
+		"codeId": "123",
+		"oncePassInd": false,
+		"meta": {
+			"status": "ResultStatus",
+			"code": 0,
+			"message": ""
+		}
+	}
+	res.json(resData);
 };
 
 /*
@@ -214,11 +226,11 @@ exports.getAuthPassreset = function(req, res) {
  * phoneNumber(type: string) - query parameter - Контактный номера абонента (обязательно должно быть заполнено только одно из полей email или phoneNumber)
  * email(type: string) - query parameter - Контактный адрес электронной почты абонента (обязательно должно быть заполнено только одно из полей email или phoneNumber)
  */
-exports.getAuthRemindlogin = function(req, res) {
+exports.getAuthRemindlogin = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('hash', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -238,11 +250,11 @@ exports.getAuthRemindlogin = function(req, res) {
  * login(type: string) - query parameter - Логин пользователя USS/SSO
  * oneTimeToken(type: string) - query parameter - Одноразовый пароль/Token для проверки (получается в методе generateOneTimeToken)
  */
-exports.getAuthVerifyonetimetoken = function(req, res) {
+exports.getAuthVerifyonetimetoken = function (req, res) {
 	req.check('token', 'Invalid parameter').notEmpty();
 	req.checkQuery('oneTimeToken', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
@@ -259,10 +271,10 @@ exports.getAuthVerifyonetimetoken = function(req, res) {
  * Client-Type(type: string) - header parameter - Наименование системы, использующей API
  * xbrToken(type: string) - query parameter - Токен XBR
  */
-exports.getAuthXbr = function(req, res) {
+exports.getAuthXbr = function (req, res) {
 	req.checkQuery('xbrToken', 'Invalid query parameter').notEmpty();
 	if (req.validationErrors()) {
-		return res.json(400,req.validationErrorsJson());
+		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
 
