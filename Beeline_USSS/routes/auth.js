@@ -33,8 +33,8 @@ exports.getAuthAuth = function (req, res) {
 		},
 		"oncePassDateEnd": "",
 		"meta": {
-			"status": "ResultStatus",
-			"code": 0,
+			"status": "OK",
+			"code": 2000,
 			"message": ""
 		}
 	}
@@ -225,8 +225,8 @@ exports.getAuthPassreset = function (req, res) {
 		"codeId": "123",
 		"oncePassInd": false,
 		"meta": {
-			"status": "ResultStatus",
-			"code": 0,
+			"status": "OK",
+			"code": 2000,
 			"message": ""
 		}
 	}

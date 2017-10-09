@@ -714,8 +714,8 @@ exports.getInfoLogininfo = function (req, res) {
 			}
 		],
 		"meta": {
-			"status": "ResultStatus",
-			"code": 0,
+			"status": "OK",
+			"code": 2000,
 			"message": ""
 		}
 	};
