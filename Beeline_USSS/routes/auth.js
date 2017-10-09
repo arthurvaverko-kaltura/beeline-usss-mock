@@ -19,7 +19,26 @@ exports.getAuthAuth = function (req, res) {
 	res.status(200);
 
 	// set response body and send
-	res.json({});
+	var resData = {
+		"token": "1234ABC",
+		"tempPassInd": false,
+		"newUserInd": false,
+		"convergence": {
+			"ctn": "452650999",
+			"login": "loginname",
+			"fttbLogin": "",
+			"fttbAlias": "",
+			"fttbCtn": "",
+			"date": ""
+		},
+		"oncePassDateEnd": "",
+		"meta": {
+			"status": "ResultStatus",
+			"code": 0,
+			"message": ""
+		}
+	}
+	res.json(resData);
 };
 
 /*
