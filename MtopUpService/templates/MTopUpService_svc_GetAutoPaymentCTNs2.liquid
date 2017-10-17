@@ -1,0 +1,23 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mtop="http://www.beeline.ru/mTopUpService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mtop:GetAutoPaymentCTNs2Response>
+         <!--Optional:-->
+         <mtop:GetAutoPaymentCTNs2Result>
+            <!--Zero or more repetitions:-->
+            <mtop:AutoPaymentPhone>
+               <!--Optional:-->
+               <mtop:MinThresholdSum>?</mtop:MinThresholdSum>
+               <!--Optional:-->
+               <mtop:PaySystemID>?</mtop:PaySystemID>
+               <!--Optional:-->
+               <mtop:PaymentSum>?</mtop:PaymentSum>
+               <!--Optional:-->
+               <mtop:PhoneNumber>?</mtop:PhoneNumber>
+               <!--Optional:-->
+               <mtop:ScheduledDay>?</mtop:ScheduledDay>
+            </mtop:AutoPaymentPhone>
+         </mtop:GetAutoPaymentCTNs2Result>
+      </mtop:GetAutoPaymentCTNs2Response>
+   </soapenv:Body>
+</soapenv:Envelope>

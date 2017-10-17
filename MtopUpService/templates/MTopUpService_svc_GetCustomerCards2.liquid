@@ -1,0 +1,25 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mtop="http://www.beeline.ru/mTopUpService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mtop:GetCustomerCards2Response>
+         <!--Optional:-->
+         <mtop:GetCustomerCards2Result>
+            <!--Zero or more repetitions:-->
+            <mtop:CustomerCard>
+               <!--Optional:-->
+               <mtop:BankBIN>?</mtop:BankBIN>
+               <!--Optional:-->
+               <mtop:CardCipher>cid:136670120511</mtop:CardCipher>
+               <!--Optional:-->
+               <mtop:CardNumberCode>?</mtop:CardNumberCode>
+               <!--Optional:-->
+               <mtop:IsActive>?</mtop:IsActive>
+               <!--Optional:-->
+               <mtop:RegisterDate>?</mtop:RegisterDate>
+               <!--Optional:-->
+               <mtop:RegistrationKind>?</mtop:RegistrationKind>
+            </mtop:CustomerCard>
+         </mtop:GetCustomerCards2Result>
+      </mtop:GetCustomerCards2Response>
+   </soapenv:Body>
+</soapenv:Envelope>

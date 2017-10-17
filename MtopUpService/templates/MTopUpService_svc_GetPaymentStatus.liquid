@@ -1,0 +1,19 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mtop="http://www.beeline.ru/mTopUpService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mtop:GetPaymentStatusResponse>
+         <!--Optional:-->
+         <mtop:GetPaymentStatusResult>
+            <mtop:TransId>?</mtop:TransId>
+            <mtop:InvoiceId>?</mtop:InvoiceId>
+            <!--Optional:-->
+            <mtop:Status>?</mtop:Status>
+            <mtop:Result>?</mtop:Result>
+            <!--Optional:-->
+            <mtop:Source>?</mtop:Source>
+            <!--Optional:-->
+            <mtop:Description>?</mtop:Description>
+         </mtop:GetPaymentStatusResult>
+      </mtop:GetPaymentStatusResponse>
+   </soapenv:Body>
+</soapenv:Envelope>
