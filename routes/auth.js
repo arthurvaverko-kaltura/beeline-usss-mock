@@ -51,15 +51,35 @@ exports.getAuthAuth = function (req, res) {
  * login(type: string) - query parameter - Логин пользователя USSS
  * userType(type: string) - query parameter - Тип пользователя
  */
-exports.putAuthAuth = function (req, res) {
-	req.checkQuery('login', 'Invalid query parameter').notEmpty();
-	if (req.validationErrors()) {
-		return res.json(400, req.validationErrorsJson());
-	}
-	res.status(200);
-
-	// set response body and send
-	res.json({});
+exports.putAuthAuth = function(req, res){
+    req.checkQuery('login', 'Invalid query parameter').notEmpty();
+    if (req.validationErrors()) {
+        return res.json(400, req.validationErrorsJson());
+    }
+    res.status(200);
+    
+    // set response body and send
+    // set response body and send
+    var resData = {
+        "token": "1234ABC",
+        "tempPassInd": false,
+        "newUserInd": false,
+        "convergence": {
+            "ctn": "452650999",
+            "login": "loginname",
+            "fttbLogin": "",
+            "fttbAlias": "",
+            "fttbCtn": "",
+            "date": ""
+        },
+        "oncePassDateEnd": "",
+        "meta": {
+            "status": "OK",
+            "code": 2000,
+            "message": ""
+        }
+    }
+    res.json(resData);
 };
 
 /*
