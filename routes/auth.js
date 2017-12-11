@@ -65,8 +65,8 @@ exports.putAuthAuth = function(req, res){
         "tempPassInd": false,
         "newUserInd": false,
         "convergence": {
-            "ctn": "452650999",
-            "login": "loginname",
+            "ctn": "972542560999",
+            "login": "ArthurVaverko",
             "fttbLogin": "",
             "fttbAlias": "",
             "fttbCtn": "",
