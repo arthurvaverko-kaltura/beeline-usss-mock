@@ -1137,7 +1137,6 @@ exports.getInacServiceInfoCheckphonekit = function(req, res) {
  * login(type: string) - query parameter - Логин FTTB-пользователя USSS (FTTB/номер или буквенно-цифровой логин)
  */
 exports.getInacServiceInfoConnectedservices = function(req, res){
-    req.check('token', 'Invalid parameter').notEmpty();
     req.checkQuery('login', 'Invalid query parameter').notEmpty();
     if (req.validationErrors()) {
         return res.json(400, req.validationErrorsJson());
@@ -1146,272 +1145,250 @@ exports.getInacServiceInfoConnectedservices = function(req, res){
     
     // set response body and send
     var jsonData = {
-      "meta": {
-        "status": "OK",
-        "code": 20000,
-        "message": null
-      },
-      "containers": [
-        {
-          "serviceType": "IPTV_TARIFF_ENTITY",
-          "services": [
-            {
-              "price": 963,
-              "technicalName": "Базовый с необязательным возвратом эфира",
-              "ussName": "Базовый с необязательным возвратом эфира",
-              "shortDescription": "Базовый с необязательным возвратом эфира",
-              "fullDescription": "Базовый с необязательным возвратом эфира",
-              "serviceId": "21899",
-              "bundleDiscount": 0,
-              "additionalParams": {
-                "effectivePrice": null,
-                "mobileSubscriber": false,
-                "allowRelatedOfferByFttb": true,
-                "channelCount": 28,
-                "basePktPrice": 0,
-                "guid": "56d1610a-3f73-44a8-89b1-9c792b406bb3",
-                "mac": "0023A2E7BABF",
-                "guidType": "ПРИЕМНИК MOTOROLA VIP1216 IP-TV STB С HDD",
-                "serial": "MB1009RG3310",
-                "hddExists": true,
-                "mobChannelCount": 21
-              },
-              "packetTypes": [
-                {
-                  "price": 0,
-                  "technicalName": "Премиальные пакеты",
-                  "ussName": "Премиальные пакеты",
-                  "packetId": "21907",
-                  "parentPacketId": "21899",
-                  "packetEntityType": "PACKET_TYPE",
-                  "pktMinCount": 0,
-                  "pktDiscountEnabled": false,
-                  "svod": false,
-                  "mobileSubscriber": false,
-                  "allowRelatedOffer": false,
-                  "externalId": -2,
-                  "showNumber": 2,
-                  "excludedPacketIds": [],
-                  "connected": false,
-                  "childPackets": [
-                    {
-                      "price": 0,
-                      "technicalName": "Подписки Видеопроката",
-                      "ussName": "Подписки Видеопроката",
-                      "packetId": "21921",
-                      "parentPacketId": "21907",
-                      "packetEntityType": "PACKET_SUB_TYPE",
-                      "pktDiscountEnabled": false,
-                      "svod": false,
-                      "mobileSubscriber": false,
-                      "allowRelatedOffer": false,
-                      "externalId": -3,
-                      "showNumber": 3,
-                      "excludedPacketIds": [],
-                      "connected": false,
-                      "childPackets": [
-                        {
-                          "price": 90,
-                          "technicalName": "Подписка СТС",
-                          "ussName": "Подписка СТС",
-                          "packetId": "21922",
-                          "parentPacketId": "21921",
-                          "packetEntityType": "CONCRETE_PACKET",
-                          "pktDiscountEnabled": false,
-                          "svod": true,
-                          "mobileSubscriber": false,
-                          "allowRelatedOffer": false,
-                          "externalId": 40,
-                          "excludedPacketIds": [],
-                          "publicService": true,
-                          "targetedOffer": false,
-                          "connected": true,
-                          "childPackets": null
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "price": 0,
-                  "technicalName": "Тематические пакеты",
-                  "ussName": "Тематические пакеты",
-                  "packetId": "21900",
-                  "parentPacketId": "21899",
-                  "packetEntityType": "PACKET_TYPE",
-                  "pktMinCount": 3,
-                  "pktDiscountEnabled": true,
-                  "svod": false,
-                  "mobileSubscriber": false,
-                  "allowRelatedOffer": false,
-                  "externalId": -1,
-                  "showNumber": 1,
-                  "excludedPacketIds": [],
-                  "connected": false,
-                  "childPackets": [
-                    {
-                      "price": 0,
-                      "technicalName": "ТВ пакеты",
-                      "ussName": "ТВ пакеты",
-                      "packetId": "21901",
-                      "parentPacketId": "21900",
-                      "packetEntityType": "PACKET_SUB_TYPE",
-                      "pktDiscountEnabled": false,
-                      "svod": false,
-                      "mobileSubscriber": false,
-                      "allowRelatedOffer": false,
-                      "excludedPacketIds": [],
-                      "connected": false,
-                      "childPackets": [
-                        {
-                          "price": 291,
-                          "technicalName": "Кино",
-                          "ussName": "Кино",
-                          "shortDescription": "Про киношечку, кино, кинцо, кинуленьку! ",
-                          "packetId": "21904",
-                          "parentPacketId": "21901",
-                          "packetEntityType": "CONCRETE_PACKET",
-                          "pktDiscountEnabled": true,
-                          "svod": false,
-                          "mobileSubscriber": false,
-                          "allowRelatedOffer": false,
-                          "externalId": 26,
-                          "channelCount": 100,
-                          "excludedPacketIds": [],
-                          "publicService": true,
-                          "targetedOffer": false,
-                          "connected": true,
-                          "mobChannelCount": 68,
-                          "childPackets": null
-                        },
-                        {
-                          "price": 291,
-                          "technicalName": "Познавательный",
-                          "ussName": "Познавательный",
-                          "shortDescription": "Самый познавательный канал в мире! Такой познавательный, что познаете все-все на свете! Вперед к знаниям! ",
-                          "packetId": "21905",
-                          "parentPacketId": "21901",
-                          "packetEntityType": "CONCRETE_PACKET",
-                          "pktDiscountEnabled": true,
-                          "svod": false,
-                          "mobileSubscriber": false,
-                          "allowRelatedOffer": false,
-                          "externalId": 27,
-                          "channelCount": 12,
-                          "excludedPacketIds": [],
-                          "publicService": true,
-                          "targetedOffer": false,
-                          "connected": true,
-                          "mobChannelCount": 9,
-                          "childPackets": null
-                        },
-                        {
-                          "price": 291,
-                          "technicalName": "Спорт",
-                          "ussName": "Спорт",
-                          "shortDescription": "Про спортик, будьте в центре всех спортивных событий, смотря наш канал!",
-                          "packetId": "21906",
-                          "parentPacketId": "21901",
-                          "packetEntityType": "CONCRETE_PACKET",
-                          "pktDiscountEnabled": true,
-                          "svod": false,
-                          "mobileSubscriber": false,
-                          "allowRelatedOffer": false,
-                          "externalId": 28,
-                          "channelCount": 110,
-                          "excludedPacketIds": [],
-                          "publicService": true,
-                          "targetedOffer": false,
-                          "connected": true,
-                          "mobChannelCount": 77,
-                          "childPackets": null
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ],
-              "splId": 9479720,
-              "inBundle": false,
-              "inPreset": false
-            }
-          ]
+        "meta": {
+            "status": "OK",
+            "code": 20000,
+            "message": null
         },
-        {
-          "serviceType": "IPTV_CONSOLE_RENT",
-          "services": [
-            {
-              "price": 230,
-              "technicalName": "Аренда приставки с жестким диском 1",
-              "ussName": "Аренда приставки с жестким диском 1",
-              "serviceId": "tvr0204",
-              "bundleDiscount": 0,
-              "additionalParams": {
-                "accId": 5,
-                "accType": "ALL_DAYS",
-                "installmentTime": 1,
-                "installmentDate": "2016-07-13T00:00:00.000+0300",
-                "guid": "584a4c8c-3d45-4dfe-ae87-fd7b59a642d3",
-                "mac": "0023A398F120",
-                "guidType": "ПРИЕМНИК MOTOROLA VIP1216 IP-TV STB С HDD",
-                "serial": "MB1009RG9112",
-                "nonStop": false,
-                "hddExists": true,
-                "isTve": true
-              },
-              "splId": 9211510,
-              "inBundle": false,
-              "inPreset": false
-            },
-            {
-              "price": 230,
-              "technicalName": "Аренда приставки с жестким диском 1",
-              "ussName": "Аренда приставки с жестким диском 1",
-              "serviceId": "tvr0204",
-              "bundleDiscount": 0,
-              "additionalParams": {
-                "accId": 5,
-                "accType": "ALL_DAYS",
-                "installmentTime": 1,
-                "installmentDate": "2016-07-13T00:00:00.000+0300",
-                "guid": "587634a2-af76-4226-9cf1-00109b0ee213",
-                "mac": "0023A398EACA",
-                "guidType": "ПРИЕМНИК MOTOROLA VIP1216 IP-TV STB С HDD",
-                "serial": "MB1009RG5943",
-                "nonStop": false,
-                "hddExists": true,
-                "isTve": true
-              },
-              "splId": 9211512,
-              "inBundle": false,
-              "inPreset": false
-            },
-            {
-              "price": 230,
-              "technicalName": "Аренда приставки с жестким диском 1",
-              "ussName": "Аренда приставки с жестким диском 1",
-              "serviceId": "tvr0204",
-              "bundleDiscount": 0,
-              "additionalParams": {
-                "accId": 5,
-                "accType": "ALL_DAYS",
-                "installmentTime": 1,
-                "installmentDate": "2017-03-25T00:00:00.000+0300",
-                "guid": "56d1610a-3f73-44a8-89b1-9c792b406bb3",
-                "mac": "0023A2E7BABF",
-                "guidType": "ПРИЕМНИК MOTOROLA VIP1216 IP-TV STB С HDD",
-                "serial": "MB1009RG3310",
-                "nonStop": false,
-                "hddExists": true,
-                "isTve": true
-              },
-              "splId": 9366093,
-              "inBundle": false,
-              "inPreset": false
-            }
-          ]
-        }
-      ]
+        "containers": [{
+            "serviceType": "IPTV_TARIFF_ENTITY",
+            "services": [{
+                "price": 963,
+                "technicalName": "Базовый с необязательным возвратом эфира",
+                "ussName": "Базовый с необязательным возвратом эфира",
+                "shortDescription": "Базовый с необязательным возвратом эфира",
+                "fullDescription": "Базовый с необязательным возвратом эфира",
+                "serviceId": "21899",
+                "bundleDiscount": 0,
+                "additionalParams": {
+                    "effectivePrice": null,
+                    "mobileSubscriber": false,
+                    "allowRelatedOfferByFttb": true,
+                    "channelCount": 28,
+                    "basePktPrice": 0,
+                    "guid": "56d1610a-3f73-44a8-89b1-9c792b406bb3",
+                    "mac": "0023A2E7BABF",
+                    "guidType": "ПРИЕМНИК MOTOROLA VIP1216 IP-TV STB С HDD",
+                    "serial": "MB1009RG3310",
+                    "hddExists": true,
+                    "mobChannelCount": 21
+                },
+                "packetTypes": [{
+                    "price": 0,
+                    "technicalName": "Премиальные пакеты",
+                    "ussName": "Премиальные пакеты",
+                    "packetId": "21907",
+                    "parentPacketId": "21899",
+                    "packetEntityType": "PACKET_TYPE",
+                    "pktMinCount": 0,
+                    "pktDiscountEnabled": false,
+                    "svod": false,
+                    "mobileSubscriber": false,
+                    "allowRelatedOffer": false,
+                    "externalId": -2,
+                    "showNumber": 2,
+                    "excludedPacketIds": [],
+                    "connected": false,
+                    "childPackets": [{
+                        "price": 0,
+                        "technicalName": "Подписки Видеопроката",
+                        "ussName": "Подписки Видеопроката",
+                        "packetId": "21921",
+                        "parentPacketId": "21907",
+                        "packetEntityType": "PACKET_SUB_TYPE",
+                        "pktDiscountEnabled": false,
+                        "svod": false,
+                        "mobileSubscriber": false,
+                        "allowRelatedOffer": false,
+                        "externalId": -3,
+                        "showNumber": 3,
+                        "excludedPacketIds": [],
+                        "connected": false,
+                        "childPackets": [{
+                            "price": 90,
+                            "technicalName": "Подписка СТС",
+                            "ussName": "Подписка СТС",
+                            "packetId": "21922",
+                            "parentPacketId": "21921",
+                            "packetEntityType": "CONCRETE_PACKET",
+                            "pktDiscountEnabled": false,
+                            "svod": true,
+                            "mobileSubscriber": false,
+                            "allowRelatedOffer": false,
+                            "externalId": 40,
+                            "excludedPacketIds": [],
+                            "publicService": true,
+                            "targetedOffer": false,
+                            "connected": true,
+                            "childPackets": null
+                        }]
+                    }]
+                }, {
+                    "price": 0,
+                    "technicalName": "Тематические пакеты",
+                    "ussName": "Тематические пакеты",
+                    "packetId": "21900",
+                    "parentPacketId": "21899",
+                    "packetEntityType": "PACKET_TYPE",
+                    "pktMinCount": 3,
+                    "pktDiscountEnabled": true,
+                    "svod": false,
+                    "mobileSubscriber": false,
+                    "allowRelatedOffer": false,
+                    "externalId": -1,
+                    "showNumber": 1,
+                    "excludedPacketIds": [],
+                    "connected": false,
+                    "childPackets": [{
+                        "price": 0,
+                        "technicalName": "ТВ пакеты",
+                        "ussName": "ТВ пакеты",
+                        "packetId": "21901",
+                        "parentPacketId": "21900",
+                        "packetEntityType": "PACKET_SUB_TYPE",
+                        "pktDiscountEnabled": false,
+                        "svod": false,
+                        "mobileSubscriber": false,
+                        "allowRelatedOffer": false,
+                        "excludedPacketIds": [],
+                        "connected": false,
+                        "childPackets": [{
+                            "price": 291,
+                            "technicalName": "Кино",
+                            "ussName": "Кино",
+                            "shortDescription": "Про киношечку, кино, кинцо, кинуленьку! ",
+                            "packetId": "21904",
+                            "parentPacketId": "21901",
+                            "packetEntityType": "CONCRETE_PACKET",
+                            "pktDiscountEnabled": true,
+                            "svod": false,
+                            "mobileSubscriber": false,
+                            "allowRelatedOffer": false,
+                            "externalId": 26,
+                            "channelCount": 100,
+                            "excludedPacketIds": [],
+                            "publicService": true,
+                            "targetedOffer": false,
+                            "connected": true,
+                            "mobChannelCount": 68,
+                            "childPackets": null
+                        }, {
+                            "price": 291,
+                            "technicalName": "Познавательный",
+                            "ussName": "Познавательный",
+                            "shortDescription": "Самый познавательный канал в мире! Такой познавательный, что познаете все-все на свете! Вперед к знаниям! ",
+                            "packetId": "21905",
+                            "parentPacketId": "21901",
+                            "packetEntityType": "CONCRETE_PACKET",
+                            "pktDiscountEnabled": true,
+                            "svod": false,
+                            "mobileSubscriber": false,
+                            "allowRelatedOffer": false,
+                            "externalId": 27,
+                            "channelCount": 12,
+                            "excludedPacketIds": [],
+                            "publicService": true,
+                            "targetedOffer": false,
+                            "connected": true,
+                            "mobChannelCount": 9,
+                            "childPackets": null
+                        }, {
+                            "price": 291,
+                            "technicalName": "Спорт",
+                            "ussName": "Спорт",
+                            "shortDescription": "Про спортик, будьте в центре всех спортивных событий, смотря наш канал!",
+                            "packetId": "21906",
+                            "parentPacketId": "21901",
+                            "packetEntityType": "CONCRETE_PACKET",
+                            "pktDiscountEnabled": true,
+                            "svod": false,
+                            "mobileSubscriber": false,
+                            "allowRelatedOffer": false,
+                            "externalId": 28,
+                            "channelCount": 110,
+                            "excludedPacketIds": [],
+                            "publicService": true,
+                            "targetedOffer": false,
+                            "connected": true,
+                            "mobChannelCount": 77,
+                            "childPackets": null
+                        }]
+                    }]
+                }],
+                "splId": 9479720,
+                "inBundle": false,
+                "inPreset": false
+            }]
+        }, {
+            "serviceType": "IPTV_CONSOLE_RENT",
+            "services": [{
+                "price": 230,
+                "technicalName": "Аренда приставки с жестким диском 1",
+                "ussName": "Аренда приставки с жестким диском 1",
+                "serviceId": "tvr0204",
+                "bundleDiscount": 0,
+                "additionalParams": {
+                    "accId": 5,
+                    "accType": "ALL_DAYS",
+                    "installmentTime": 1,
+                    "installmentDate": "2016-07-13T00:00:00.000+0300",
+                    "guid": "584a4c8c-3d45-4dfe-ae87-fd7b59a642d3",
+                    "mac": "0023A398F120",
+                    "guidType": "ПРИЕМНИК MOTOROLA VIP1216 IP-TV STB С HDD",
+                    "serial": "MB1009RG9112",
+                    "nonStop": false,
+                    "hddExists": true,
+                    "isTve": true
+                },
+                "splId": 9211510,
+                "inBundle": false,
+                "inPreset": false
+            }, {
+                "price": 230,
+                "technicalName": "Аренда приставки с жестким диском 1",
+                "ussName": "Аренда приставки с жестким диском 1",
+                "serviceId": "tvr0204",
+                "bundleDiscount": 0,
+                "additionalParams": {
+                    "accId": 5,
+                    "accType": "ALL_DAYS",
+                    "installmentTime": 1,
+                    "installmentDate": "2016-07-13T00:00:00.000+0300",
+                    "guid": "587634a2-af76-4226-9cf1-00109b0ee213",
+                    "mac": "0023A398EACA",
+                    "guidType": "ПРИЕМНИК MOTOROLA VIP1216 IP-TV STB С HDD",
+                    "serial": "MB1009RG5943",
+                    "nonStop": false,
+                    "hddExists": true,
+                    "isTve": true
+                },
+                "splId": 9211512,
+                "inBundle": false,
+                "inPreset": false
+            }, {
+                "price": 230,
+                "technicalName": "Аренда приставки с жестким диском 1",
+                "ussName": "Аренда приставки с жестким диском 1",
+                "serviceId": "tvr0204",
+                "bundleDiscount": 0,
+                "additionalParams": {
+                    "accId": 5,
+                    "accType": "ALL_DAYS",
+                    "installmentTime": 1,
+                    "installmentDate": "2017-03-25T00:00:00.000+0300",
+                    "guid": "56d1610a-3f73-44a8-89b1-9c792b406bb3",
+                    "mac": "0023A2E7BABF",
+                    "guidType": "ПРИЕМНИК MOTOROLA VIP1216 IP-TV STB С HDD",
+                    "serial": "MB1009RG3310",
+                    "nonStop": false,
+                    "hddExists": true,
+                    "isTve": true
+                },
+                "splId": 9366093,
+                "inBundle": false,
+                "inPreset": false
+            }]
+        }]
     }
     res.json(jsonData);
 };
