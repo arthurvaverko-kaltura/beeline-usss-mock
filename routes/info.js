@@ -686,41 +686,20 @@ exports.getInfoLoginconsolidation = function (req, res) {
  * client(type: string) - query parameter - Наименование системы, использующей API
  * login(type: string) - query parameter - Идентификатор абонента (login, alias, ctn)
  */
-exports.getInfoLogininfo = function (req, res) {
-	tokenValidator.validateBeelineToken(req, res);
-	//req.check('token', 'Invalid parameter').notEmpty();
-	req.checkQuery('hash', 'Invalid query parameter').notEmpty();
-	req.checkQuery('login', 'Invalid query parameter').notEmpty();
-	if (req.validationErrors()) {
-		return res.json(400, req.validationErrorsJson());
-	}
-	res.status(200);
-	// set response body and send
-	//https://my.beeline.ru/api/docs/index.html#!/info_1/getLoginInfo
-	var mockLoginInof = {
-		"logins": [
-			{
-				"type": "B2B", // ['UNKNOWN' or ' B2B' or ' B2C' or ' FTTB' or ' ADMIN']
-				"ussLogin": "USSSMockLoginNameNew",
-				"tempPwd": false,
-				"convergence": {
-					"ctn": "",
-					"login": "",
-					"fttbLogin": "",
-					"fttbAlias": "",
-					"fttbCtn": "",
-					"date": ""
-				}
-			}
-		],
-		"meta": {
-			"status": "OK",
-			"code": 2000,
-			"message": ""
-		}
-	};
-
-	res.json(mockLoginInof);
+exports.getInfoLogininfo = function(req, res){
+    tokenValidator.validateBeelineToken(req, res);
+    //req.check('token', 'Invalid parameter').notEmpty();
+    req.checkQuery('hash', 'Invalid query parameter').notEmpty();
+    req.checkQuery('login', 'Invalid query parameter').notEmpty();
+    if (req.validationErrors()) {
+        return res.json(400, req.validationErrorsJson());
+    }
+    res.status(200);
+    // set response body and send
+    //https://my.beeline.ru/api/docs/index.html#!/info_1/getLoginInfo
+    var mockLoginInof = {"meta":{"status":"OK","code":20000,"message":null},"logins":[{"type":"FTTB","ussLogin":"FTTB/0855070490","tempPwd":false}]};
+    
+    res.json(mockLoginInof);
 };
 
 /*
