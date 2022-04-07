@@ -17,6 +17,14 @@ exports.getAuthAuth = function (req, res) {
 		return res.json(400, req.validationErrorsJson());
 	}
 	res.status(200);
+	/* exports.getAuthAuth = function (req, res) {
+	req.checkQuery('login', 'Invalid query parameter').notEmpty();
+	req.checkQuery('password', 'Invalid query parameter').notEmpty();
+	if (req.validationErrors()) {
+		return res.json(400, req.validationErrorsJson());
+	}
+	res.status(200);
+	*/
 
 	// set response body and send
 	var resData = {
